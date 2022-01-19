@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -14,7 +15,30 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&family=Lobster&family=The+Nautigal:wght@400;700&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=The+Nautigal:wght@400;700&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     </head>
+    <script src="js/scripts.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const firebaseConfig = {
+    apiKey: "AIzaSyC2sNKfFarFsv9Tnoq9GdGbhR7W04Qpn3U",
+    authDomain: "bakery-king.firebaseapp.com",
+    databaseURL: "https://bakery-king-default-rtdb.firebaseio.com",
+    projectId: "bakery-king",
+    storageBucket: "bakery-king.appspot.com",
+    messagingSenderId: "641067723491",
+    appId: "1:641067723491:web:44590ecf9b8f11ff44f3d6",
+    measurementId: "G-3DW0PECPS0"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    </script>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -50,64 +74,82 @@
         </header>
         <!-- Main Content-->
         <main class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
-                        <div class="my-5">
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <div class="form-floating">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name">Name</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
-                                    <label for="email">Email address</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." data-sb-validations="required" />
-                                    <label for="phone">Phone Number</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                                </div>
-                                <br />
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        To activate this form, sign up at
-                                        <br />
-                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+            <div class="main-content paddsection">
+                <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-md-8 col-md-offset-2">
+                        <div class="row">
+                          <div class="container-main single-main">
+                            <div class="col-md-12">
+                                <h1 style="font-family:'Gwendolyn', cursive;">Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</h1>
+                                    <div class="my-5">
+                            
+                                        <div class="col-lg-12">
+                                            <div class="cmt padDiv">
+                                                <form id="comment-form" method="post" action="" role="form">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                             <div class="form-group">
+                                                                <input id="name"  name="name" class="form-control" placeholder="Name *" required="required">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <input id="email"  name="email" class="form-control" placeholder="Email *" required="required">
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <input id="phone"  name="phone" class="form-control" placeholder="Phone *" required="required">
+                                                                </div>
+                                                        </div>
+
+                                    
+            
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group">
+                                                                 <textarea id="message" name="message" class="form-control" placeholder="Message *" style="height: 200px;" required="required"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12"><hr> 
+                                                            <input onclick="show()" class="btn btn-primary " value="Send">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                            <div class="col-lg-12">
+                                                <div class="cmt padDiv">
+                                                    <h3  style="font-family:'Gwendolyn', cursive;"><hr><hr style="height:2px;border-width:0;color:gray;background-color:gray">Search Message</h3>
+                                  
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <input id="name1" name="name" class="form-control" placeholder="Name *" >
+                                                                </div>
+                                                            </div>
+                                      
+                                                            <div class="col-lg-12"><hr> 
+                                                                <input onclick="search()" class="btn btn-primary " value="Search">
+                                                            </div>
+                                                        </div>
+                                   
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
-                            </form>
+                            </div>
                         </div>
+                      </div>
                     </div>
+
+                            
+                        
                 </div>
+              </div>
+             </div>
             </div>
         </main>
         <!-- Footer-->
